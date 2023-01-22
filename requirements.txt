@@ -3,4 +3,4 @@ matplotlib
 streamlit
 Pillow
 scikit_learn
-rdkit
+rdkit-pypi
