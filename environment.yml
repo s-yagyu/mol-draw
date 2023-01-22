@@ -1,4 +1,4 @@
-name: mol_upload_draw_cloud.py
+name: mol_upload
 channels:
   - conda-forge
 dependencies:
