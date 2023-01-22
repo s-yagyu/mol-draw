@@ -1,12 +1,44 @@
 # mol-draw
-Upload mol file and draw structure
 
+molファイルをアップロードすると分子構造を描画する
 
 https://s-yagyu-mol-draw-mol-upload-draw-cloud-x5cmef.streamlit.app/
 
+example mol files
+
+https://github.com/s-yagyu/mol-draw/tree/main/mol_sample
 
 
-### Stremlit Cloudにデプロイするのに苦労したこと
+![mol_app01](figs/mol_app01.PNG)
+
+
+
+### 利用しているモジュール
+
+rdkitモジュールを利用しています。
+
+### 苦労したところ（1）
+
+アップロードしたファイルがStremalitで用意している普通のファイルではなく、mol形式のファイル。
+
+rdkit側では、ファイルのパスを指定しないと読み込むことができない。
+
+mpfile.NamedTemporaryFileを利用。
+
+[streamlist-file-uploader-example](https://github.com/hurutoriya/streamlist-file-uploader-example/blob/main/streamlit_pdf_uploader/main.py)
+
+
+### 苦労したこと（2）
+
+Stremlit Cloudにデプロイでモジュールの指定で問題。
+
+- Condaのenvironment.ymlで最初トライ
+  -> うまくいかなかった
+- requirements.txtに変更
+　-> from rdkit.Chem import Drawのインポートエラー
+- packages.txtの追加
+  -> うまくいった
+
 
 こちらの記事が参考になりました。感謝！
 
@@ -14,10 +46,4 @@ https://s-yagyu-mol-draw-mol-upload-draw-cloud-x5cmef.streamlit.app/
 
 [chem_streamlit　Github](https://github.com/iwatobipen/chem_streamlit)
 
-- Conda のenvironment.ymlで最初トライ
-  -> うまくいかなかった
-- requirements.txtに変更
-　 -> from rdkit.Chem import Draw　のインポートエラー
-- packages.txtの追加
-  　-> うまくいった
 
