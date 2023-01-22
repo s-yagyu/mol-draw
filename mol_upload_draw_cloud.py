@@ -4,10 +4,8 @@
 from pathlib import Path
 from tempfile import NamedTemporaryFile
 
-import matplotlib.pyplot as plt
-
 import streamlit as st
-
+import matplotlib.pyplot as plt
 from rdkit import Chem
 from rdkit.Chem import inchi
 from rdkit.Chem import Draw
