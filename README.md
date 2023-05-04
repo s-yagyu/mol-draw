@@ -13,32 +13,33 @@ https://github.com/s-yagyu/mol-draw/tree/main/mol_sample
 
 
 
-### 利用しているモジュール
+#### Streamlit、Streamlit Cloudで苦労したところの覚え
 
-rdkitモジュールを利用しています。
+#### 利用しているモジュール
 
-### 苦労したところ（1）
+rdkitモジュールを利用。(pipでインストール）
+
+#### Streamlitのプログラムで苦労したところ
 
 アップロードしたファイルがStremalitで用意している普通のファイルではなく、mol形式のファイル。
 
-rdkit側では、ファイルのパスを指定しないと読み込むことができない。
-
-mpfile.NamedTemporaryFileを利用。
+rdkit側では、ファイルのパスを指定しないと読み込むことができないので、tempfile.NamedTemporaryFileを利用。
 
 [streamlist-file-uploader-example](https://github.com/hurutoriya/streamlist-file-uploader-example/blob/main/streamlit_pdf_uploader/main.py)
 
 
-### 苦労したこと（2）
+#### Streamlit Cloudで苦労したこと
 
 Stremlit Cloudにデプロイでモジュールの指定で問題。
 
 - Condaのenvironment.ymlで最初トライ
   -> うまくいかなかった
+  
 - requirements.txtに変更
 　-> from rdkit.Chem import Drawのインポートエラー
+ 
 - packages.txtの追加
-  -> うまくいった
-
+  -> うまくいった(matplotlibを使う場合は、こちらを用意した方がよさそう）
 
 こちらの記事が参考になりました。感謝！
 
