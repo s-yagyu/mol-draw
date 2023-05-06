@@ -12,6 +12,9 @@ https://github.com/s-yagyu/mol-draw/tree/main/mol_sample
 ![mol_app01](figs/mol_app01.PNG)
 
 
+Qiitaに参考記事があります。
+
+[Streamlitでmolファイルの分子構造の描画](https://qiita.com/Gyutan/items/b8203209c9f554546aaf)
 
 #### Streamlit、Streamlit Cloudで苦労したところの覚え
 
